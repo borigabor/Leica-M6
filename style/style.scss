@@ -2,8 +2,8 @@ html{
     font-size: 62.5%;
 }
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 body{
@@ -16,12 +16,12 @@ h1{
     font-weight: lighter;
 }
 h2{
-font-size: 8rem;
-font-family: 'Lobster', cursive;
-font-weight: lighter;
+    font-size: 8rem;
+    font-family: 'Lobster', cursive;
+    font-weight: lighter;
 }
 h3{
-font-size: 3.5rem;
+    font-size: 3.5rem;
 }
 h4{
     font-size: 3rem;
@@ -31,11 +31,64 @@ p{
 }
 li{
     font-size: 2rem;
-    list-style: none;
 }
 a{
     color: white;
     text-decoration: none;
-
 }
 @import "home";
+@import "features";
+@import "soon";
+@import "footer";
+
+@media screen and (max-width: 1200px){
+    html{
+        font-size: 50%;
+    }
+    nav{
+        #Logo{
+            flex: 1;
+        }
+        ul{
+            li{
+                margin-left: 5rem;
+            }
+        }
+    }
+    .showcase{
+        grid-template-columns: 10% 1fr 10%;
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+        img,h2,.info{
+            grid-column: 2/3;
+            text-align: center;
+        }
+    }
+    .features{
+        align-items: center;
+
+        h2{
+            margin-top: 5rem;
+        }
+        .cards{
+            flex-direction:column;
+            width: 100%;
+
+            .card{
+                margin: 5rem 0rem;
+            }
+        }
+    }
+    .soon{
+        overflow: hidden;
+        img{
+            width: 60%;
+        }
+        h2{
+            font-size: 5rem;
+            text-align: center;
+        }
+    }
+}
